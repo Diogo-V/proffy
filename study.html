@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Configurations and information about our page -->
+<head>
+    <!-- Page configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+          user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Page title -->
+    <title>Proffy | Online Study Platform</title>
+
+    <!-- Connects file with our CSS style files -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/partials/page-study.css">
+
+    <!-- Gets fonts for this project -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;
+                family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+</head>
+
+<!-- Everything showed on the page goes here -->
+<body id="page-study">
+
+    <!-- Creates a box so that we can style it -->
+    <div id="container">
+
+        <!-- Creates page top -->
+        <header class="page-header">
+
+            <!-- Top box with back signal and logo -->
+            <div class="top-bar-container">
+                <a href="/">
+                    <img src="images/icons/back.svg" alt="Back">
+                </a>
+                <img src="images/logo.svg" alt="Proffy">
+            </div>
+
+            <!-- Lower box with description and search fields -->
+            <div class="header-content">
+
+                <!-- Description -->
+                <strong>Available proffys</strong>
+
+                <!-- Search fields and forms -->
+                <form id="search-teachers">
+
+                    <!-- Subject form box -->
+                    <div class="select-block">
+                        <label for="subject">Subject</label>  <!-- Is connected to this dropdown box -->
+                        <select name="subject" id="subject">  <!-- Dropdown box -->
+                            <option value="" disabled="" hidden="">Select one option</option>
+                            <option value="1">Arts</option>
+                            <option value="2">Biology</option>
+                            <option value="3">Science</option>
+                            <option value="4">Physical Education</option>
+                            <option value="5">Physics</option>
+                            <option value="6">Geography</option>
+                            <option value="7">History</option>
+                            <option value="8">Maths</option>
+                            <option value="9">Portuguese</option>
+                            <option value="10">Chemistry</option>
+                        </select>
+                    </div>
+
+                    <!-- Weekday form box -->
+                    <div class="select-block">
+                        <label for="weekday">Weekday</label>  <!-- Is connected to this dropdown box -->
+                        <select name="weekday" id="weekday">  <!-- Dropdown box -->
+                            <option value="" disabled="" hidden="">Select one option</option>
+                            <option value="0">Sunday</option>
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                        </select>
+                    </div>
+
+                    <!-- Hour field box -->
+                    <div class="input-block">
+                        <label for="time">Hour</label>  <!-- Is connected to this input box -->
+                        <input name="time" id="time" type="time" >  <!-- Time input field -->
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit">Filter</button>
+
+                </form>
+
+            </div>
+
+        </header>
+
+        <!-- Main content of the page -->
+        <main>
+
+            <!-- 'Article' means a content that will be repeated -->
+            <article class="teacher-item">
+
+                <!-- Holds student's photo, name and subject of choice -->
+                <header>
+
+                    <!-- Student's gitHub profile picture -->
+                    <img
+                        src="https://avatars3.githubusercontent.com/u/50443643?s=460&u=
+                             e23e156a5919802f0fbd8d402d267ff7aa72b571&v=4"
+                        alt="Diogo Venancio">
+
+                    <!-- Name and subject -->
+                    <div>
+                        <strong>Diogo Venancio</strong>
+                        <span>Maths</span>
+                    </div>
+
+                </header>
+
+                <!-- Student's description -->
+                <p>
+                    I have the aspiration of becoming one of the best at what I do and, to reach that goal,
+                    I work every day in improving not only myself, but also the people around me.<br><br>
+                    I consider myself an easy-going and motivated person that works very nicely in a team.
+                </p>
+
+                <!-- Contact info -->
+                <footer>
+
+                    <!-- Price -->
+                    <p>
+                        Price per hour<strong>20,00€</strong>
+                    </p>
+
+                    <!-- Contact button -->
+                    <button type="button">
+                        <img src="images/icons/whatsapp.svg" alt="Whatsapp">Contact now
+                    </button>
+
+                </footer>
+
+            </article>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

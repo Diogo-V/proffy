@@ -12,8 +12,9 @@
     <!-- Page title -->
     <title>Proffy | Online Study Platform</title>
 
-    <!-- Connects file with our CSS style file -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Connects file with our CSS style files -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/partials/page-landing.css">
 
     <!-- Gets fonts for this project -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;
@@ -25,11 +26,39 @@
 
     <!-- Creates a box so that we can style it -->
     <div id="container">
-        <h1>Proffy</h1>
-        <p>Your online study platform</p>
-        <img src="" alt="Icon">
-        <button>Study</button>
-        <button>Teach</button>
+
+        <!-- Title and slogan container -->
+        <div class="logo-container">
+            <img src="images/logo.svg" alt="Proffy">
+            <h2>Your online study platform</h2>
+        </div>
+
+        <!-- Background image -->
+        <img class="hero-image" src="images/landing.svg" alt="Study platform">
+
+        <!-- Access buttons -->
+        <div class="buttons-container">
+
+            <!-- Study button -->
+            <a class="study" href="study.html">
+                <img src="images/icons/study.svg" alt="Study">
+                Study
+            </a>
+
+            <!-- Teach button -->
+            <a class="teach" href="teach.html">
+                <img src="images/icons/give-classes.svg" alt="Teach">
+                Teach
+            </a>
+
+        </div>
+
+        <!-- Connections text -->
+        <p class="total-connections">
+            Over 200 connections already done!
+            <img src="images/icons/purple-heart.svg" alt="Purple heart">
+        </p>
+
     </div>
 
 </body>
