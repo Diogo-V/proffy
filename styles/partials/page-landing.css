@@ -104,7 +104,7 @@
         max-width: 1100px;
         display: grid;
         grid-template-columns: 2fr 1fr 2fr;  /* Divides in 3 unequal parts */
-        grid-template-rows: 350px 1fr;  /* Divides in 2 unequal parts */
+        grid-template-rows: 350px 104px;  /* Divides in 2 unequal parts */
         grid-template-areas:
                 "proffy image image"
                 "button button texting";
@@ -116,11 +116,11 @@
         grid-area: proffy;  /* Puts logo inside this area */
         text-align: initial;  /* Resets positioning */
         align-self: center;  /* Centers logo inside its cell */
-        margin: 0;
+        margin: 0
     }
 
     .logo-container img {
-        height: 327px;
+        height: 100%;
     }
 
     .hero-image {
@@ -130,7 +130,7 @@
 
     .buttons-container {
         grid-area: button;  /* Puts buttons inside this area */
-        justify-self: flex-start;  /* Overrides previous declaration */
+        justify-content: flex-start;  /* Overrides previous declaration */
         margin: 0;  /* Removes margin */
     }
 
