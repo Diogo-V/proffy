@@ -38,3 +38,7 @@ Teach registration page:
 <br />
 
 ![image info](public/images/markdown/teach_page_2.png)
+
+# Notes and credits:
+Made during Next Week Level #2 at Rocketseat. <br />
+Link to their website: https://rocketseat.com.br/
