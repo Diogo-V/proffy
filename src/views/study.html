@@ -41,16 +41,13 @@
                         <label for="subject">Subject</label>
                         <select name="subject" id="subject">
                             <option value="" disabled="" hidden="">Select one option</option>
-                            <option value="1">Arts</option>
-                            <option value="2">Biology</option>
-                            <option value="3">Science</option>
-                            <option value="4">Physical education</option>
-                            <option value="5">Physics</option>
-                            <option value="6">Geography</option>
-                            <option value="7">History</option>
-                            <option value="8">Maths</option>
-                            <option value="9">Portuguese</option>
-                            <option value="10">Chemistry</option>
+
+                            {%for subject in subjects%}
+                                <option value="{{loop.index}}" {{"selected" if filters.subject == loop.index}}>
+                                    {{subject}}
+                                </option>
+                            {%endfor%}
+
                         </select>
                     </div>
 
@@ -58,19 +55,19 @@
                         <label for="weekday">Weekday</label>
                         <select name="weekday" id="weekday">
                             <option value="" disabled="" hidden="">Select one option</option>
-                            <option value="0">Sunday</option>
-                            <option value="1">Monday</option>
-                            <option value="2">Tuesday</option>
-                            <option value="3">Wednesday</option>
-                            <option value="4">Thursday</option>
-                            <option value="5">Friday</option>
-                            <option value="6">Saturday</option>
+
+                            {% for weekday in weekdays %}
+                            <option value="{{loop.index0}}" {{ "selected" if filters.weekday == loop.index0}}>
+                                {{weekday}}
+                            </option>
+                            {%endfor%}
+
                         </select>
                     </div>
 
                     <div class="input-block">
                         <label for="time">Hour</label>
-                        <input name="time" id="time" type="time">
+                        <input name="time" id="time" type="time" value="{{filters.time}}">
                     </div>
 
                     <button type="submit">Submit</button>
@@ -83,61 +80,44 @@
 
         <main>
 
-            <article class="teacher-item">
+            {% if proffys == "" %}
 
-                <header>
-                    <img src="https://avatars3.githubusercontent.com/u/50443643?s=460&u=e23e156a
-                              5919802f0fbd8d402d267ff7aa72b571&v=4" alt="Diogo Venancio">
-                    <div>
-                        <strong>Diogo Venancio</strong>
-                        <span>Maths</span>
-                    </div>
-                </header>
-
-                <p>
-                    I consider myself an easy-going and motivated person that works very nicely in a team. <br><br>
-                    I have the aspiration of becoming one of the best at what I do and, to reach that goal,
-                    I work every day in improving not only myself, but also the people around me.
+                <p class = "no-results">
+                    No proffys were found with your search parameters.
                 </p>
 
-                <footer>
-                    <p>Price/Hour<strong>20,00€</strong></p>
+            {% else %}
 
-                    <button type="button">
-                        <img src="../../public/images/icons/whatsapp.svg" alt="Whatsapp">
-                        Contact
-                    </button>
-                </footer>
+                {%for proffy in proffys %}
+                    <article class="teacher-item">
 
-            </article>
+                    <header>
+                        <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
+                        <div>
+                            <strong>{{proffy.name}}</strong>
+                            <span>{{proffy.subject}}</span>
+                        </div>
+                    </header>
 
-            <article class="teacher-item">
+                    <p>
+                        {{proffy.bio}}
+                    </p>
 
-                <header>
-                    <img src="https://avatars3.githubusercontent.com/u/50443643?s=460&u=e23e156a
-                              5919802f0fbd8d402d267ff7aa72b571&v=4" alt="Diogo Venancio">
-                    <div>
-                        <strong>Diogo Venancio</strong>
-                        <span>Maths</span>
-                    </div>
-                </header>
+                    <footer>
+                        <p>Price/Hour<strong>{{proffy.cost}}€</strong></p>
 
-                <p>
-                    I consider myself an easy-going and motivated person that works very nicely in a team. <br><br>
-                    I have the aspiration of becoming one of the best at what I do and, to reach that goal,
-                    I work every day in improving not only myself, but also the people around me.
-                </p>
+                        <a href="https://api.whatsapp.com/send?1=en&phone=55{{proffy.whatsapp}}&text=Hello professor
+                                 {{proffy.name}}, I would like to join your {{proffy.subject}} class" class="button"
+                                 target="_blank">
+                            <img src="../../public/images/icons/whatsapp.svg" alt="Whatsapp">Contact
+                        </a>
 
-                <footer>
-                    <p>Price/Hour<strong>20,00€</strong></p>
+                    </footer>
 
-                    <button type="button">
-                        <img src="../../public/images/icons/whatsapp.svg" alt="Whatsapp">
-                        Contact
-                    </button>
-                </footer>
+                </article>
+                {%endfor%}
 
-            </article>
+            {% endif %}
 
         </main>
 
